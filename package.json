@@ -1,0 +1,31 @@
+{
+  "name": "mawja-spare-parts",
+  "version": "1.0.0",
+  "description": "منظومة موجة البرمجة لإدارة مبيعات قطع غيار السيارات والشاحنات",
+  "main": "main.js",
+  "author": "موجة البرمجة",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^44.7.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ly.mawja.spareparts",
+    "productName": "موجة البرمجة - قطع الغيار",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "index.html", "styles.css", "app.js", "README.md"],
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
